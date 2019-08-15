@@ -149,21 +149,21 @@ $0变量是指整条记录。$1表示当前行的第一个域,$2表示当前行�
 $NF是number finally,表示最后一列的信息，跟变量NF是有区别的，变量NF统计的是每行列的总数
 
 ##### awk常用指令
-1.awk  '/root/' /etc/passwd                   搜索/etc/passwd有root关键字的所有行
-2.awk -F: '/root/ {print $7}' /etc/passwd     搜索/etc/passwd有root关键字的所有行，并显示对应的shell
-3.cat /etc/passwd | awk -F ':' '{print $1}'   同上
-4.awk  -F ':'  '{print "filename:" FILENAME ",linenumber:" NR ",columns:" NF ",linecontent:"$0}' /etc/passwd   统计/etc/passwd:文件名，每行的行号，每行的列数，对应的完整行内容
-5.awk -F: '{printf ("filename:%10s, linenumber:%3s,column:%3s,content:%3f\n",FILENAME,NR,NF,$0)}' /etc/passwd     
+- 1.awk  '/root/' /etc/passwd                   搜索/etc/passwd有root关键字的所有行
+- 2.awk -F: '/root/ {print $7}' /etc/passwd     搜索/etc/passwd有root关键字的所有行，并显示对应的shell
+- 3.cat /etc/passwd | awk -F ':' '{print $1}'   同上
+- 4.awk  -F ':'  '{print "filename:" FILENAME ",linenumber:" NR ",columns:" NF ",linecontent:"$0}' /etc/passwd   统计/etc/passwd:文件名，每行的行号，每行的列数，对应的完整行内容
+- 5.awk -F: '{printf ("filename:%10s, linenumber:%3s,column:%3s,content:%3f\n",FILENAME,NR,NF,$0)}' /etc/passwd     
 awk -F ":" '{print $1}' /etc/passwd     
 awk -F ":" '{print $NF}' /etc/passwd
-6.ls -lF | awk '/^d/'                          
-7.awk -F ":" '{print $NF}' /etc/passwd         指定特定的分隔符，查询最后一列    
+- 6.ls -lF | awk '/^d/'                          
+- 7.awk -F ":" '{print $NF}' /etc/passwd         指定特定的分隔符，查询最后一列    
 awk -F ":" '{print $NF-1}' /etc/passwd
 awk -F ":"  '{if(NR<31 && NR >12) print $1}' /etc/passwd
-8.awk -F '[:]' '{print $4}' /etc/passwd        多个分隔符
-9 .cat /etc/passwd | awk -F: 'BEGIN{print "name, shell"} {print $1,$NF} END{print "hello  world"}'    首尾各加一段命令
-10.last | awk '{S[$3]++} END{for(a in S ) {print S[a],a}}' |uniq| sort -rh                          查看最近登录最多的IP信息
-11.ifconfig |grep eth* | awk -F '[ ]+' '{print $1}                                                利用正则过滤多个空格
-12.ls -l| awk '{if($5>100){count++; sum+=$5}} {print "Count:" count,"Sum: " sum}'                   显示整个过程
+- 8.awk -F '[:]' '{print $4}' /etc/passwd        多个分隔符
+- 9 .cat /etc/passwd | awk -F: 'BEGIN{print "name, shell"} {print $1,$NF} END{print "hello  world"}'    首尾各加一段命令
+- 10.last | awk '{S[$3]++} END{for(a in S ) {print S[a],a}}' |uniq| sort -rh                          查看最近登录最多的IP信息
+- 11.ifconfig |grep eth* | awk -F '[ ]+' '{print $1}                                                利用正则过滤多个空格
+- 12.ls -l| awk '{if($5>100){count++; sum+=$5}} {print "Count:" count,"Sum: " sum}'                   显示整个过程
 ls -l|awk '{if($5>100){count++; sum+=$5}} END{print "Count:" count,"Sum: " sum}'                     只显示最后的结果
-13.awk -F ':' 'BEGIN {count=0;} {name[count] = $1;count++;}; END{for (i = 0; i < NR; i++) print i, name[i]}' /etc/passwd  统计显示/etc/passwd的账户
+- 13.awk -F ':' 'BEGIN {count=0;} {name[count] = $1;count++;}; END{for (i = 0; i < NR; i++) print i, name[i]}' /etc/passwd  统计显示/etc/passwd的账户
