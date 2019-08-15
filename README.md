@@ -149,7 +149,7 @@ $0变量是指整条记录。$1表示当前行的第一个域,$2表示当前行�
 $NF是number finally,表示最后一列的信息，跟变量NF是有区别的，变量NF统计的是每行列的总数
 
 ##### awk常用指令
-1.awk  '/root/' /etc/passwd                  搜索/etc/passwd有root关键字的所有行
+1.awk  '/root/' /etc/passwd                   搜索/etc/passwd有root关键字的所有行
 2.awk -F: '/root/ {print $7}' /etc/passwd     搜索/etc/passwd有root关键字的所有行，并显示对应的shell
 3.cat /etc/passwd | awk -F ':' '{print $1}'   同上
 4.awk  -F ':'  '{print "filename:" FILENAME ",linenumber:" NR ",columns:" NF ",linecontent:"$0}' /etc/passwd   统计/etc/passwd:文件名，每行的行号，每行的列数，对应的完整行内容
