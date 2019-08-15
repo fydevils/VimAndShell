@@ -102,33 +102,33 @@ y  向前滚动一行
 
 # 3.linux 三剑客
 ### grep 擅长查找功能
-1.grep [-acinv] [--color=auto] '搜寻字符串' filename
-2.grep root /etc/passwd  ;  cat /etc/passwd | grep root 将/etc/passwd，有出现 root 的行取出来
-3.grep -n root /etc/passwd  将/etc/passwd，有出现 root 的行取出来,同时显示这些行在/etc/passwd的行号
-4.grep -v root /etc/passwd  将/etc/passwd，将没有出现 root 的行取出来
-5.grep -v root /etc/passwd | grep -v nologin  将没有出现 root 和nologin的行取出来
-6.sudo dmesg | grep -n --color=auto 'ARPT' 列出核心信息，再以 grep 找出内含 ARPT 那行,要将捉到的关键字显色，且加上行号来表示
-7.sudo dmesg | grep -n -A3 -B2 --color=auto 'ARPT' 列出核心信息，再以 grep 找出内含 eth 那行,在关键字所在行的前两行与后三行也一起捉出来显示
-8.grep ‘energywise’ *          在当前目录搜索带'energywise'行的文件
-9.grep -r ‘energywise’ *       在当前目录及其子目录下搜索'energywise'行的文件
-10.grep -l -r ‘energywise’ *    在当前目录及其子目录下搜索'energywise'行的文件，但是不显示匹配的行，只显示匹配的文件
+- 1.grep [-acinv] [--color=auto] '搜寻字符串' filename
+- 2.grep root /etc/passwd  ;  cat /etc/passwd | grep root 将/etc/passwd，有出现 root 的行取出来
+- 3.grep -n root /etc/passwd  将/etc/passwd，有出现 root 的行取出来,同时显示这些行在/etc/passwd的行号
+- 4.grep -v root /etc/passwd  将/etc/passwd，将没有出现 root 的行取出来
+- 5.grep -v root /etc/passwd | grep -v nologin  将没有出现 root 和nologin的行取出来
+- 6.sudo dmesg | grep -n --color=auto 'ARPT' 列出核心信息，再以 grep 找出内含 ARPT 那行,要将捉到的关键字显色，且加上行号来表示
+- 7.sudo dmesg | grep -n -A3 -B2 --color=auto 'ARPT' 列出核心信息，再以 grep 找出内含 eth 那行,在关键字所在行的前两行与后三行也一起捉出来显示
+- 8.grep ‘energywise’ *          在当前目录搜索带'energywise'行的文件
+- 9.grep -r ‘energywise’ *       在当前目录及其子目录下搜索'energywise'行的文件
+- 10.grep -l -r ‘energywise’ *    在当前目录及其子目录下搜索'energywise'行的文件，但是不显示匹配的行，只显示匹配的文件
 
 
 ### sed 全称是：Stream EDitor sed 擅长取行和替换（mac 上sed有问题 需要 brew install gnu-sed,用gsed ）
 sed 是一种在线编辑器，它一次处理一行内容。处理时，把当前处理的行存储在临时缓冲区中，称为“模式空间”（pattern space），接着用sed命令处理缓冲区中的内容，处理完成后，把缓冲区的内容送往屏幕。接着处理下一行，这样不断重复，直到文件末尾。文件内容并没有 改变，除非你使用重定向存储输出。Sed主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。
 
-1.nl /etc/passwd | sed -e '2,5d'  将 /etc/passwd 的内容列出并且列印行号，同时，请将第 2~5 行删除！
-2.nl /etc/passwd | sed -e '3,$d'  删除第3行到最后一行
-3.nl /etc/passwd | sed '2a drink tea'         第2行后添加
-4.nl /etc/passwd | sed '2a Drink tea or ......\    第2行后添加多行
+- 1.nl /etc/passwd | sed -e '2,5d'  将 /etc/passwd 的内容列出并且列印行号，同时，请将第 2~5 行删除！
+- 2.nl /etc/passwd | sed -e '3,$d'  删除第3行到最后一行
+- 3.nl /etc/passwd | sed '2a drink tea'         第2行后添加
+- .nl /etc/passwd | sed '2a Drink tea or ......\    第2行后添加多行
 > drink beer ?'
-5.nl /etc/passwd | sed '2,5c No 2-5 number'     把第2行到第5行替换成‘No 2-5 number’
-6.nl /etc/passwd | sed -n '5,7p'       仅列出 /etc/passwd 文件内的第 5-7 行
-7.nl /etc/passwd | sed -n '/root/p'       搜索 /etc/passwd有root关键字的行
-8.nl /etc/passwd | sed -n '/root/{s/bash/blueshell/;p}'     执行后面花括号中的一组命令，每个命令之间用分号分隔，这里把bash替换为blueshel
-9.sed 's/要被取代的字串/新的字串/g'
-10.nl /etc/passwd | sed -e '3,$d' -e 's/bash/blueshell/'    
-11.sed -i 's/\.$/\!/g' regular_express.txt       （危险动作 请勿用在系统文件上）
+- 5.nl /etc/passwd | sed '2,5c No 2-5 number'     把第2行到第5行替换成‘No 2-5 number’
+- 6.nl /etc/passwd | sed -n '5,7p'       仅列出 /etc/passwd 文件内的第 5-7 行
+- 7.nl /etc/passwd | sed -n '/root/p'       搜索 /etc/passwd有root关键字的行
+- 8.nl /etc/passwd | sed -n '/root/{s/bash/blueshell/;p}'     执行后面花括号中的一组命令，每个命令之间用分号分隔，这里把bash替换为blueshel
+- 9.sed 's/要被取代的字串/新的字串/g'
+- 10.nl /etc/passwd | sed -e '3,$d' -e 's/bash/blueshell/'    
+- 11.sed -i 's/\.$/\!/g' regular_express.txt       （危险动作 请勿用在系统文件上）
 
 ### awk 因为其取了三位创始人 Alfred Aho，Peter Weinberger, 和 Brian Kernighan 的Family Name的首字符。擅长取列。
 
