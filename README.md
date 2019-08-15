@@ -11,43 +11,43 @@ Vim + shellTools
 ### 指令
 * 0.上k下j左h右l
 * 1.Ctrl+f 向前翻一页
-2.Ctrl+b 向后翻一页
-3.选择多行 shift+v & v
-4./word  ?/word    n搜索下一个关键字 shift+n搜索上一个关键字 
-5.%s/word/new_word/   全局替换
-6.选中要替换的行 shift+; 出现<,> 之后输入  s/work/new_word
-7.%s/work/new_word/g   globle
-8.ctrl+n 代码自动补全
-9.shift+4 行尾
-10.0   行首
-11.shift+g  最后一行
-12.gg       第一行
-13.g;       上一次编辑的位置        g,    下一次编辑的位置
-14.y 复制  p  粘贴      yy 一行   nyy 多行    
-15.dd 删除 p  粘贴
-16.Gsearch -F 'word' . -R --include=*rb
-17.Greplace a  wa 
-18.colorscheme dasert
-19.vs垂直分屏 sp水平分屏  ctrl+ww 切换光标所在模块  ctrl+w+hjkl 跳动到不同的方向上
-20.命令模式选中多行 shift+; s/^/\/\/   
-21.rails插件
-22.set number  set nonumber   显示隐藏行数
-23.set wrap    set nowrap     折叠展开代码 横向过长
-24.gg v shift+g =   代码格式化
-25. :set paste    :set nopaste   粘贴代码
-26. 选中代码 shift+>   shift+<     移动代码块
-27. shift+j    多行代码合并成1行
-28. yaw 复制当前单词  viep 替换当前单词
+* 2.Ctrl+b 向后翻一页
+* 3.选择多行 shift+v & v
+* 4./word  ?/word    n搜索下一个关键字 shift+n搜索上一个关键字 
+* 5.%s/word/new_word/   全局替换
+* 6.选中要替换的行 shift+; 出现<,> 之后输入  s/work/new_word
+* 7.%s/work/new_word/g   globle
+* 8.ctrl+n 代码自动补全
+* 9.shift+4 行尾
+* 10.0   行首
+* 11.shift+g  最后一行
+* 12.gg       第一行
+* 13.g;       上一次编辑的位置        g,    下一次编辑的位置
+* 14.y 复制  p  粘贴      yy 一行   nyy 多行    
+* 15.dd 删除 p  粘贴
+* 16.Gsearch -F 'word' . -R --include=*rb
+* 17.Greplace a  wa 
+* 18.colorscheme dasert
+* 19.vs垂直分屏 sp水平分屏  ctrl+ww 切换光标所在模块  ctrl+w+hjkl 跳动到不同的方向上
+* 20.命令模式选中多行 shift+; s/^/\/\/   
+* 21.rails插件
+* 22.set number  set nonumber   显示隐藏行数
+* 23.set wrap    set nowrap     折叠展开代码 横向过长
+* 24.gg v shift+g =   代码格式化
+* 25. :set paste    :set nopaste   粘贴代码
+* 26. 选中代码 shift+>   shift+<     移动代码块
+* 27. shift+j    多行代码合并成1行
+* 28. yaw 复制当前单词  viep 替换当前单词
 
 ### vim 菜鸟和老鸟的区别
-1.使用 / 做导航
-2.不要使用树状菜单，多使用ctrl+f ,ctrl+e
-3.多用w,b 少用一直按住 h,l
-4.命令记载手指里面
+* 1.使用 / 做导航
+* 2.不要使用树状菜单，多使用ctrl+f ,ctrl+e
+* 3.多用w,b 少用一直按住 h,l
+* 4.命令记载手指里面
 
 ### vim 配置
-home/user/.vimrc
-https://github.com/amix/vimrc
+* home/user/.vimrc
+* https://github.com/amix/vimrc
 
 # 2.cat more less
 cat是一次性显示整个文件的内容，还可以将多个文件连接起来显示，它常与重定向符号配合使用，适用于文件内容少的情况；
@@ -56,10 +56,10 @@ more比cat强大，提供分页显示的功能。
 less比more更强大，提供翻页，跳转，查找等命令。而且more和less都支持：用空格显示下一页，按键b显示上一页。
 
 ### cat
-1.cat file1 file2 > file
-2.cat > filename 只能创建新文件,不能编辑已有文件.
-3.cat -b filename 显示行号,只不过对于空白行不编号
-4.cat -s 或 当遇到有连续两行以上的空白行，就代换为一行的空白行。
+* 1.cat file1 file2 > file
+* 2.cat > filename 只能创建新文件,不能编辑已有文件.
+* 3.cat -b filename 显示行号,只不过对于空白行不编号
+* 4.cat -s 或 当遇到有连续两行以上的空白行，就代换为一行的空白行。
 
 ### more
 1.Enter    向下n行，需要定义。默认为1行  
