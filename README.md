@@ -9,8 +9,8 @@ Vim + shellTools
 #### 粘贴模式 ：粘贴代码的时候格式不变形
 
 ### 指令
-0.上k下j左h右l
-1.Ctrl+f 向前翻一页
+--- 0.上k下j左h右l
+--- 1.Ctrl+f 向前翻一页
 2.Ctrl+b 向后翻一页
 3.选择多行 shift+v & v
 4./word  ?/word    n搜索下一个关键字 shift+n搜索上一个关键字 
