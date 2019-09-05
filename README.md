@@ -167,3 +167,11 @@ awk -F ":"  '{if(NR<31 && NR >12) print $1}' /etc/passwd
 - 12.ls -l| awk '{if($5>100){count++; sum+=$5}} {print "Count:" count,"Sum: " sum}'                   显示整个过程
 ls -l|awk '{if($5>100){count++; sum+=$5}} END{print "Count:" count,"Sum: " sum}'                     只显示最后的结果
 - 13.awk -F ':' 'BEGIN {count=0;} {name[count] = $1;count++;}; END{for (i = 0; i < NR; i++) print i, name[i]}' /etc/passwd  统计显示/etc/passwd的账户
+
+
+
+
+
+
+# shell常用命令
+1.kill -9 `ps -ef | grep -w npm | grep "npm" | awk '{print $2}' | sed ':a;N;$!ba;s/\n/ /g'`
